@@ -7,7 +7,10 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx
-    imagePullPolicy: IfNotPresent
-  nodeSelector:
-    disktype: ssd
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+  - name: springapp
+    image: yanivomc/spring-music:latest
+    ports:
+    - containerPort: 8080
