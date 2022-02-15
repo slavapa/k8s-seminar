@@ -17,7 +17,13 @@ RUN ls -al src/
 
 # Get dependencies for Go part of build
 RUN go get -u github.com/jteeuwen/go-bindata/...
-RUN go get -u github.com/kubernetes-up-and-running/kuard...
+
+RUN pwd
+RUN ls -al
+RUN ls -al bin/
+RUN ls -al src/
+
+RUN go get -u github.com/kubernetes-up-and-running/kuard/...
 
 RUN pwd
 RUN ls -al
