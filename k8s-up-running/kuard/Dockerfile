@@ -23,7 +23,7 @@ RUN ls -al
 RUN ls -al bin/
 RUN ls -al src/
 
-RUN go get -u github.com/kubernetes-up-and-running/kuard/...
+RUN git clone https://github.com/slavapa/k8s-seminar.git
 
 RUN pwd
 RUN ls -al
