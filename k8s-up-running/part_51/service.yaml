@@ -1,6 +1,5 @@
-cat service.yaml
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: my-service
 spec:
