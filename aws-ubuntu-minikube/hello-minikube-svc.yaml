@@ -7,9 +7,9 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: cheddar-cheese
+    app: hello-minikube
   ports:
-  - nodePort: 31239
+  - nodePort: 30721
     port: 8080
     protocol: TCP
     targetPort: 8080
