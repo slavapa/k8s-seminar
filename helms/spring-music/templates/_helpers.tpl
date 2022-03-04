@@ -4,7 +4,12 @@
 
 {{- define "spring.labels" }}
 labels:
-  generator: helm
+  generator: helm-byme
   date: {{ now | htmlDate }}
-  name: {{ .Release.Name }}
+  app-name: {{ .Chart.Name}}
+  version: {{ .Chart.Version }}
 {{- end }}
+
+
+
+

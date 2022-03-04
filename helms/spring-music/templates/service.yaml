@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: my-service
+  {{- include "spring.labels" . | nindent 2 }}
 spec:
   selector:
     app: music
@@ -11,3 +12,4 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 8080
+

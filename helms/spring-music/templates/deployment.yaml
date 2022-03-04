@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-music
+  name: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+  {{- include "spring.labels" . | nindent 2 }}
 spec:
   selector:
     matchLabels:
       app: music
-  replicas: 1
+  replicas: {{ .Values.pods.replica }}
   template:
     metadata:
-      labels:
-        app: music
+      {{- include "spring.labels" . | nindent 6 }}
     spec:
       containers:
-      - name: spring-music
-        image: yanivomc/spring-music:latest
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.pods.image }}:{{ .Values.pods.tag }}"
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
+          protocol: TCP
