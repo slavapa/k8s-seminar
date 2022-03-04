@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  dbname: {{ .Values.databasetest.dbname }}
+  dbtable: {{ .Values.databasetest.dbtable }}
+  drink: {{ .Values.food.drink | upper }}
+  eat: {{ .Values.food.eat | trunc 13 | upper | quote }}
